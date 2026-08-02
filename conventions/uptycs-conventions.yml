@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: derived
+source: https://github.com/demisto/content/blob/master/Packs/Uptycs/Integrations/Uptycs/Uptycs.py
+description: >-
+  Cross-cutting request/response semantics of the Uptycs platform API as
+  observable from the official Uptycs pack for Cortex XSOAR (the public
+  reference implementation of the API). The full API reference is
+  customer-gated in-product, so undocumented dimensions are recorded as
+  unknown rather than guessed.
+base_url:
+  pattern: https://{stack}.uptycs.io/public/api/customers/{customerId}
+  note: Per-customer stack domain; there is no shared public API host.
+authentication:
+  style: jwt-bearer
+  detail: >-
+    Client-minted HS256 JWT (iss = API key, signed with API secret,
+    exp <= 1 hour) sent as Authorization Bearer; requests also carry an
+    RFC 1123 date header.
+  artifact: authentication/uptycs-authentication.yml
+media_type: application/json
+query_model: >-
+  Ad-hoc analytics run as SQL (osquery dialect) posted to /query (realtime)
+  and /assets/query (asset table); saved queries are managed at /queries.
+pagination:
+  style: unknown
+  note: Not documented on any public surface.
+idempotency:
+  supported: unknown
+  note: No idempotency-key contract documented publicly.
+versioning:
+  style: unknown
+  note: API is rooted at /public/api without a version segment.
+error_envelope:
+  style: unknown
+  note: JSON error objects; shape not documented publicly.
+rate_limits:
+  signaling: unknown
+related:
+  - security/uptycs-domain-security.yml
+  - conformance/uptycs-conformance.yml

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Attribution guidance
+Attribution: Required
+Preferred-Citation: https://www.uptycs.com/
+
+# Contact
+Contact: contact@uptycs.com

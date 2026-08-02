@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+description: >-
+  Results of probing the /.well-known/ discovery surface for the Uptycs web
+  hosts in apis.yml. Uptycs has no public API host (the platform API lives on
+  per-customer stacks at https://{stack}.uptycs.io behind customer credentials),
+  so only the marketing/site hosts were probed. Status is the HTTP code observed
+  at fetch time; uptycs.com 301-redirects every path to www.uptycs.com, which
+  answers 404 for all of them. The one live discovery document found was
+  /llms.txt at the site root (saved verbatim at llms/uptycs-llms.txt).
+hosts:
+  - host: https://www.uptycs.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /llms.txt
+        status: 200
+        file: ../llms/uptycs-llms.txt
+  - host: https://uptycs.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+      - path: /.well-known/openid-configuration
+        status: 301
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+      - path: /.well-known/api-catalog
+        status: 301
+      - path: /.well-known/ai-plugin.json
+        status: 301

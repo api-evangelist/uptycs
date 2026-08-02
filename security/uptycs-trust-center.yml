@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+source: https://www.uptycs.com/about/security
+url: https://www.uptycs.com/about/security
+certifications:
+  - SOC 2 Type II
+posture:
+  encryption_in_transit: TLS 1.2
+  encryption_at_rest: AES-256
+  data_processing: >-
+    Uptycs acts as a data processor with GDPR commitments; a public
+    subject-access-request process is published at
+    https://www.uptycs.com/security/subject-access-request and a GDPR page at
+    https://www.uptycs.com/gdpr.
+evidence:
+  - source: https://www.uptycs.com/about/security
+    keywords:
+      - soc 2
+      - soc2
+      - encryption
+      - compliance

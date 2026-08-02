@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/demisto/content/blob/master/Packs/Uptycs/Integrations/Uptycs/Uptycs.py
+docs: https://xsoar.pan.dev/docs/reference/integrations/uptycs
+description: >-
+  Uptycs publishes no public API reference (per-customer docs live in-product
+  on each https://{stack}.uptycs.io tenant), but the authentication model is
+  documented publicly through the official Uptycs pack for Cortex XSOAR. Each
+  API user downloads a credentials file from the Uptycs console containing an
+  API key, API secret, the stack domain, and the customer ID. Clients mint a
+  short-lived HS256 JWT (iss = API key, exp = now + 3600s, signed with the API
+  secret) and send it as an Authorization Bearer token, along with an RFC 1123
+  date header, to https://{stack}.uptycs.io/public/api/customers/{customerId}.
+summary:
+  types:
+    - http
+  schemes:
+    - bearer
+  bearer_format: JWT (HS256)
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+  - name: UptycsApiJwt
+    type: http
+    scheme: bearer
+    bearerFormat: JWT
+    description: >-
+      Self-signed HS256 JWT minted by the client from a per-user API key
+      (claim iss) and API secret (signing key), expiring within one hour.
+      Credentials are issued per user, per customer stack, from the Uptycs
+      console (user profile > API keys). No OAuth 2.0 / OIDC surface is
+      published.
+    sources:
+      - https://github.com/demisto/content/blob/master/Packs/Uptycs/Integrations/Uptycs/Uptycs.py

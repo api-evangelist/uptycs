@@ -1,0 +1,18 @@
+generated: '2026-07-21'
+method: searched
+description: >-
+  No first-party Uptycs client libraries were found on the public package
+  registries. npm (uptycs, uptycs-sdk), PyPI (uptycs, uptycs-api, uptapi,
+  pyuptycs, uptycs-rest-api), and RubyGems (uptycs) all answer 404. The
+  github.com/Uptycs org publishes osquery-ecosystem tooling (ossec-to-osquery,
+  osquery-boshrelease, basequery-packaging) and forks, but no API client SDKs.
+  Programmatic access is documented through partner integrations (Cortex XSOAR
+  Uptycs pack) rather than a shipped SDK. Empty is the honest result.
+registries_searched:
+  - npm
+  - pypi
+  - rubygems
+  - crates.io
+  - nuget
+  - pkg.go.dev
+packages: []

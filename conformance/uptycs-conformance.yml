@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.uptycs.com/about/security
+description: >-
+  Standards posture assembled from the public Uptycs security-policies page and
+  the publicly documented platform API surface (Cortex XSOAR Uptycs pack).
+  Uptycs publishes no OpenAPI, so spec-derived assertions are unavailable.
+standards:
+  - id: soc2-type2
+    conforms: true
+    evidence: >-
+      "Uptycs maintains active SOC 2 Type II compliance" —
+      https://www.uptycs.com/about/security
+  - id: gdpr
+    conforms: true
+    evidence: >-
+      Uptycs operates as a data processor with GDPR commitments and a public
+      subject-access-request process
+      (https://www.uptycs.com/gdpr,
+      https://www.uptycs.com/security/subject-access-request)
+  - id: jwt-rfc7519
+    conforms: true
+    evidence: >-
+      Platform API authenticates with client-minted HS256 JWTs (iss = API key,
+      exp, signed with API secret) per the official Uptycs XSOAR integration
+  - id: tls
+    conforms: true
+    evidence: >-
+      Security page documents TLS 1.2 in transit and AES-256 at rest; live
+      probe of uptycs.com negotiated TLSv1.3 with HSTS
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      No OAuth 2.0 authorization surface published; API access uses per-user
+      key/secret JWTs
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      No application/problem+json error contract documented publicly; no
+      OpenAPI available to verify
