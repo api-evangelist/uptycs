@@ -49,6 +49,17 @@ tags:
 - Cloud Security
 - Endpoint Security
 - Kubernetes Security
+- osquery
+- Threat Detection
+- Compliance
+tags_raw:
+- Security
+- Cybersecurity
+- CNAPP
+- XDR
+- Cloud Security
+- Endpoint Security
+- Kubernetes Security
 - Osquery
 - Threat Detection
 - Compliance
@@ -66,6 +77,12 @@ apis:
   humanURL: https://www.uptycs.com/products/cnapp
   baseURL: https://{stack}.uptycs.io/public/api/customers/{customerId}
   tags:
+  - Security
+  - Alerts
+  - Assets
+  - Threat Intelligence
+  - osquery
+  tags_raw:
   - Security
   - Alerts
   - Assets
