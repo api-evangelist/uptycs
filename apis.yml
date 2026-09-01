@@ -60,7 +60,7 @@ tags:
 - Cloud Security
 - Endpoint Security
 - Kubernetes Security
-- Osquery
+- osquery
 - Threat Detection
 - Compliance
 tags_raw:
@@ -92,7 +92,7 @@ apis:
   - Alerts
   - Assets
   - Threat Intelligence
-  - Osquery
+  - osquery
   tags_raw:
   - Security
   - Alerts
