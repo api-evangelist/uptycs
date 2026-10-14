@@ -1,0 +1,46 @@
+generated: '2026-10-14'
+method: searched
+checked:
+- datadog/integrations/datadog-integration-edges.yml
+- palo-alto-networks/integrations/palo-alto-networks-integration-edges.yml
+source:
+- datadog/integrations/datadog-integration-edges.yml
+- palo-alto-networks/integrations/palo-alto-networks-integration-edges.yml
+edges:
+- partner_name: Datadog (own)
+  partner: datadog
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://github.com/DataDog/integrations-extras/tree/master/uptycs
+  mirror_of: datadog/integrations/datadog-integration-edges.yml
+  apps:
+  - Uptycs
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Cloud
+- partner_name: Palo Alto Networks (own)
+  partner: palo-alto-networks
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://cortex.marketplace.pan.dev/marketplace/details/Uptycs/
+  mirror_of: palo-alto-networks/integrations/palo-alto-networks-integration-edges.yml
+  apps:
+  - Uptycs
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Analytics & SIEM
+  badges:
+  - support:partner
+  - certification:certified
